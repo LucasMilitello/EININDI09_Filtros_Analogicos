@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "IIKit.h"
+#include "iikitmini.h"
 
 void setup()
 {

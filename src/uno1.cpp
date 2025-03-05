@@ -19,7 +19,7 @@ void loop()
     Serial.print(">graf:");
     Serial.print(expiresDelayMS);
     Serial.print(":");
-    Serial.print(analogRead(pinANALOG)-512);
+    Serial.print(analogRead(pinANALOG));
     Serial.println("|g");
   }
 }
