@@ -42,12 +42,13 @@ Filtros analógicos são circuitos eletrônicos que processam sinais contínuos 
 
 | Tipo                  | Função                                                                                           | Aplicações Típicas                                                         |
 | :-------------------- | :----------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| **Passa-Baixa (LPF)** | Permite frequências abaixo da frequência de corte ($$f_c$$).                                    | Redução de ruído em sistemas de áudio, suavização de sinais.               |
-| **Passa-Alta (HPF)**  | Permite frequências acima de $$f_c$$.                                                           | Eliminação de *DC offset*, acoplamento AC.                               |
-| **Passa-Banda (BPF)** | Permite uma faixa específica entre duas frequências de corte ($$f_{c1}$$ e $$f_{c2}$$).         | Rádio FM, equalizadores paramétricos.                                     |
+| **Passa-Baixa (LPF)** | Permite frequências abaixo da frequência de corte ($f_c$).                                    | Redução de ruído em sistemas de áudio, suavização de sinais.               |
+| **Passa-Alta (HPF)**  | Permite frequências acima de $f_c$.                                                           | Eliminação de *DC offset*, acoplamento AC.                               |
+| **Passa-Banda (BPF)** | Permite uma faixa específica entre duas frequências de corte ($f_{c1}$ e $f_{c2}$).         | Rádio FM, equalizadores paramétricos.                                     |
 | **Rejeita-Banda (BEF)** | Bloqueia uma faixa específica de frequências. Também conhecido como *notch filter*.             | Eliminação de interferência (ex: 60Hz da rede elétrica).                 |
 | **Passa-Tudo (APF)**  | Mantém a amplitude do sinal, mas altera sua fase. Usado para correção de fase ou atraso de sinal. | Correção de fase em sistemas de comunicação, emula atrasos em processamento. |
 
+![Tipo de Resposta](assets/tipoderesposta.png)
 ---
 
 ## Princípio de Funcionamento
@@ -75,7 +76,7 @@ A função de transferência $$H(s)$$ de um filtro é crítica para definir seu 
     $$
     H(s) = \frac{\omega_c^2}{s^2 + \sqrt{2}\omega_c s + \omega_c^2}
     $$
-*   **Aplicações**: Sistemas de áudio de alta fidelidade, instrumentação, onde a precisão na banda passante é fundamental.
+*   **Aplicações**: Sistemas de áudio de alta fidelidade, instrumentação, onde a precisão na banda passante é fundamental. ![Filtro Butterworth](assets/filtroButterworth.png)
 
 #### Chebyshev
 
@@ -88,7 +89,7 @@ A função de transferência $$H(s)$$ de um filtro é crítica para definir seu 
     |H(\omega)|^2 = \frac{1}{1 + \epsilon^2 T_n^2(\omega/\omega_c)}
     $$
     onde $$T_n$$ é o polinômio de Chebyshev e $$\epsilon$$ define a amplitude do ripple.
-*   **Aplicações**: Telecomunicações, processamento de sinais, onde a seletividade é mais importante que a fidelidade na banda passante.
+*   **Aplicações**: Telecomunicações, processamento de sinais, onde a seletividade é mais importante que a fidelidade na banda passante. ![Filtro Chebyshev](assets/filtroChebyshev.png)
 
 #### Bessel
 
@@ -97,7 +98,7 @@ A função de transferência $$H(s)$$ de um filtro é crítica para definir seu 
     *   Atenuação mais gradual do que Butterworth ou Chebyshev.
     *   Retardo de grupo constante na banda passante.
 *   **Função de Transferência**: Os polos são dispostos de forma a maximizar a linearidade da fase. Não há uma forma simples para a função de transferência geral.
-*   **Aplicações**: Sistemas de comunicação de dados, processamento de vídeo, onde a integridade do sinal no domínio do tempo é crucial.
+*   **Aplicações**: Sistemas de comunicação de dados, processamento de vídeo, onde a integridade do sinal no domínio do tempo é crucial. ![Filtro Bessel](assets/filtroBessel.png)
 
 #### Elíptico (Cauer)
 
@@ -106,7 +107,7 @@ A função de transferência $$H(s)$$ de um filtro é crítica para definir seu 
     *   Transição mais rápida (maior seletividade) entre a banda passante e a banda de rejeição em comparação com os outros tipos.
     *   Maior complexidade de projeto e implementação.
 *   **Função de Transferência**: Envolve funções elípticas de Jacobi.
-*   **Aplicações**: Aplicações que exigem a maior seletividade possível, como sistemas de análise espectral de alta precisão e processamento de sinais de rádio.
+*   **Aplicações**: Aplicações que exigem a maior seletividade possível, como sistemas de análise espectral de alta precisão e processamento de sinais de rádio. ![Filtro Eliptic](assets/filtroEliptic.png)
 
 ### Comparação de Respostas em Frequência
 
