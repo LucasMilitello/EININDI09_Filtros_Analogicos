@@ -228,7 +228,7 @@ A seguir, o código que integra todas as etapas descritas:
 import numpy as np
 import matplotlib.pyplot as plt
 
-def calcular_e_plotar_filtro_analogico(fDesejada, ordem, filterType, desvio, isBP):
+def findAnalogFilterByTargetFreq(fDesejada, ordem, filterType, desvio, isBP):
     """
     Calcula a frequência de corte (omega_c) de um filtro analógico Butterworth, 
     plota a resposta em frequência com as linhas que indicam:
@@ -321,7 +321,7 @@ if __name__ == '__main__':
     desvio = 0.05      # 5% de desvio
     isBP = True        # True para banda de passagem; False para rejeição
 
-    fc = calcular_e_plotar_filtro_analogico(fDesejada, ordem, filterType, desvio, isBP)
+    fc = findAnalogFilterByTargetFreq(fDesejada, ordem, filterType, desvio, isBP)
     print("Frequência de Corte escolhida (Hz):", fc)
 ```
 
@@ -329,7 +329,7 @@ if __name__ == '__main__':
 
 ## Conclusão
 
-A função `calcular_e_plotar_filtro_analogico`:
+A função `findAnalogFilterByTargetFreq`:
 - Recebe parâmetros que definem as características do filtro (frequência desejada, ordem, tipo, desvio e a posição da banda).
 - Converte a frequência desejada para rad/s, define a magnitude alvo e, a partir das equações do filtro Butterworth, calcula a frequência de transição e a frequência de corte.
 - Plota a resposta em frequência do filtro com marcações (linha vermelha para a frequência limite, linha verde para a frequência de corte e linha amarela para a frequência desejada) que facilitam a visualização e análise.
