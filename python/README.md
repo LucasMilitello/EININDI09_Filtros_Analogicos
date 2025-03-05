@@ -14,8 +14,6 @@ $$
 \omega_d = 2\pi\, f_{\text{desejada}}
 $$
 
-Ou, de forma inline: $ \omega_d = 2\pi\, f_{\text{desejada}} $.
-
 ---
 
 ### Definição da Magnitude Alvo ($M_{\text{target}}$)
@@ -86,9 +84,14 @@ $$
 Finalmente, a frequência de corte é obtida por:
 
 $$
-\omega_c = \frac{\omega_{\text{edge}}}{A}
+\omega_c = \frac{\omega_d \times (1 + \epsilon)}{A}, (isBP = \text{True})
 $$
 
+ou 
+
+$$
+\omega_c = \frac{\omega_d \times (1 - \epsilon)}{A}, (isBP = \text{False})
+$$
 ---
 
 ### Filtro Butterworth Passa-Alta
@@ -139,7 +142,13 @@ $$
 Logo, a frequência de corte é:
 
 $$
-\omega_c = \omega_{\text{edge}} \cdot A
+\omega_c = \omega_d \times (1 + \epsilon) \cdot A , (isBP = \text{False})
+$$
+
+ou 
+
+$$
+\omega_c = \omega_d \times (1 - \epsilon) \cdot A , (isBP = \text{True})
 $$
 
 ---
@@ -240,24 +249,16 @@ def calcular_e_plotar_filtro_analogico(fDesejada, ordem, filterType, desvio, isB
     epsilon = 1e-6
 
     # Cálculo de omega_c e omega_edge conforme o tipo de filtro
+    A = ((1 / (M_target**2)) - 1)**(1/(2*ordem))
     if filterType.lower() == 'lowpass':
-        # Resposta do filtro passa-baixa:
-        # |H(jω)| = 1 / sqrt(1 + (ω/omega_c)^(2*ordem))
-        # Relação: ω_edge = ω_c * [ (1/M_target² - 1) ]^(1/(2*ordem))
-        A = ((1 / (M_target**2)) - 1)**(1/(2*ordem))
         if isBP:
             # Para banda de passagem, ω_d deve ser menor que ω_edge
-            omega_edge = omega_d * (1 + epsilon)
+            omega_edge = omega_d * (1 + epsilon) 
         else:
             # Para banda de rejeição, ω_d deve ser maior que ω_edge
             omega_edge = omega_d * (1 - epsilon)
         omega_c = omega_edge / A
-
     elif filterType.lower() == 'highpass':
-        # Resposta do filtro passa-alta:
-        # |H(jω)| = 1 / sqrt(1 + (omega_c/ω)^(2*ordem))
-        # Relação: ω_edge = ω_c / [ (1/M_target² - 1) ]^(1/(2*ordem))
-        A = ((1 / (M_target**2)) - 1)**(1/(2*ordem))
         if isBP:
             # Para passa-alta, banda de passagem: ω_d deve ser maior que ω_edge
             omega_edge = omega_d * (1 - epsilon)
@@ -265,7 +266,6 @@ def calcular_e_plotar_filtro_analogico(fDesejada, ordem, filterType, desvio, isB
             # Para passa-alta, banda de rejeição: ω_d deve ser menor que ω_edge
             omega_edge = omega_d * (1 + epsilon)
         omega_c = omega_edge * A
-
     else:
         raise ValueError("filterType deve ser 'lowpass' ou 'highpass'.")
 
