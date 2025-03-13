@@ -19,10 +19,17 @@ $$
 ### Definição da Magnitude Alvo ($M_{\text{target}}$)
 
 Dependendo da banda de interesse, define-se:
-- **Banda de Passagem** ($isBP = \text{True}$):  
-  $$ M_{\text{target}} = 1 - \text{desvio} $$
+- **Banda de Passagem** ($isBP = \text{True}$):
+
+$$ 
+M_{\text{target}} = 1 - \text{desvio}
+$$
+
 - **Banda de Rejeição** ($isBP = \text{False}$):  
-  $$ M_{\text{target}} = \text{desvio} $$
+
+$$ 
+M_{\text{target}} = \text{desvio} 
+$$
 
 ---
 
