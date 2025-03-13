@@ -114,6 +114,10 @@ if __name__ == '__main__':
     filterType = 'lowpass'  # 'lowpass' ou 'highpass'
     desvio = 0.05      # 5% de desvio
     isBP = True        # True para banda de passagem; False para rejeição
-
     fc = findAnalogFilterByTargetFreq(fDesejada, ordem, filterType, desvio, isBP)
     print("Frequência de Corte escolhida (Hz):", fc)
+    
+    #projetando o filtro salen-key
+    R = 1000
+    c = 1/(2*np.pi*fc*R)
+    print("O valor da capacitancia é: ",c)
