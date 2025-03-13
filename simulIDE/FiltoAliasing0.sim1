@@ -15,7 +15,7 @@
 <item itemtype="Oscope" CircId="Oscope-8" mainComp="false" Show_id="false" Show_Val="false" Pos="-12,-148" rotation="0" hflip="1" vflip="1" label="Oscope-20" idLabPos="-80,-130" labelrot="0" valLabPos="0,0" valLabRot="0" Basic_X="135 _Pixels" Basic_Y="135 _Pixels" BufferSize="600000 Samples" TimDiv="32609030106" TimPos="0,830141340,830141340,830141340," VolDiv="0.678635,0.678635,0.678635,0.678635," Tunnels=",,,," Trigger="1" Filter="0.3 V" Trigger="1" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="-1.95742,-1.95742,-1.95742,-1.95742," />
 
 <item itemtype="Subcircuit" CircId="Uno-7" mainComp="false" Show_id="true" Show_Val="false" Pos="-320,-300" rotation="0" hflip="1" vflip="1" label="Arduino Uno-1" idLabPos="91,-18" labelrot="0" valLabPos="0,0" valLabRot="0" Logic_Symbol="false">
-<mainCompProps MainCompId="7_mega328-109" Frequency="16 MHz" Program="../.pio/build/uno/firmware.hex" Auto_Load="false" saveEepr="true" eeprom="0,0,0,0,0,0," SerialMon="-1" />
+<mainCompProps MainCompId="7_mega328-109" Frequency="16 MHz" Program="../.pio/build/uno/firmware.hex" Auto_Load="false" saveEepr="true" eeprom="0,0,0,0,0,0,0," SerialMon="-1" />
 </item>
 
 <item itemtype="opAmp" CircId="opAmp-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-80,-284" rotation="0" hflip="-1" vflip="-1" label="opAmp-43" idLabPos="-16,-32" labelrot="0" valLabPos="0,0" valLabRot="0" Gain="10000" Out_Imped="1e-14 Ω" Power_Pins="true" Switch_Pins="false" Volt_Pos="5 V" Volt_Neg="0 V" />
@@ -26,7 +26,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-16,-348" rotation="0" hflip="1" vflip="1" label="Resistor-61" idLabPos="-12,-20" labelrot="0" valLabPos="-8,-17" valLabRot="0" Resistance="30 kΩ" />
 
-<item itemtype="SerialPort" CircId="SerialPort-17" mainComp="false" Show_id="false" Show_Val="false" Pos="-284,-320" rotation="0" hflip="1" vflip="1" label="SerialPort-101" idLabPos="-34,-20" labelrot="0" valLabPos="0,0" valLabRot="0" Port="COM7" Baudrate="19200 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" SerialMon="false" />
+<item itemtype="SerialPort" CircId="SerialPort-17" mainComp="false" Show_id="false" Show_Val="false" Pos="-284,-320" rotation="0" hflip="1" vflip="1" label="SerialPort-101" idLabPos="-34,-20" labelrot="0" valLabPos="0,0" valLabRot="0" Port="COM3" Baudrate="19200 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" SerialMon="false" />
 
 <item itemtype="Resistor" CircId="Resistor-91" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-16,-292" rotation="0" hflip="1" vflip="1" label="Resistor-91" idLabPos="-12,-20" labelrot="0" valLabPos="-10,-20" valLabRot="0" Resistance="30 kΩ" />
 
