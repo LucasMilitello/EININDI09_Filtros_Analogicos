@@ -72,8 +72,26 @@
       "attrs": { "value": "1000" }
     },
     { "type": "chip-ads1115", "id": "ads1", "top": -66.18, "left": 72, "attrs": {} },
+    { "type": "chip-signal", "id": "sig1", "top": -85.38, "left": -129.6, "attrs": {} },
     { "type": "wokwi-potentiometer", "id": "pot3", "top": -154.9, "left": 163, "attrs": {} },
-    { "type": "wokwi-potentiometer", "id": "pot4", "top": -154.9, "left": 287.8, "attrs": {} }
+    { "type": "wokwi-potentiometer", "id": "pot4", "top": -154.9, "left": 287.8, "attrs": {} },
+    {
+      "type": "chip-scope",
+      "id": "scope1",
+      "top": -27.78,
+      "left": -619.2,
+      "attrs": {
+        "sampleTimeUs": "100",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2"
+      }
+    }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -115,9 +133,13 @@
     [ "ads1:ADDR", "esp:GND.2", "black", [ "h0" ] ],
     [ "ads1:AIN1", "pot4:SIG", "green", [ "h169.81", "v-46.98" ] ],
     [ "ads1:VDD", "esp:3V3", "red", [ "h0" ] ],
-    [ "ads1:SDA", "oled1:SDA", "blue", [ "h0" ] ]
+    [ "ads1:SDA", "oled1:SDA", "blue", [ "h0" ] ],
+    [ "esp:VP", "sig1:OUT", "green", [ "h-67.05", "v-134.4" ] ],
+    [ "scope1:A0", "sig1:OUT", "green", [ "h201.24", "v-57.6" ] ]
   ],
   "dependencies": {
-    "chip-ads1115": "github:josuemoraisgh/Wokwi-Chip-Ads1115@0.0.2"
+    "chip-ads1115": "github:josuemoraisgh/Wokwi-Chip-Ads1115@0.0.2",
+    "chip-signal": "github:josuemoraisgh/Wokwi-Chip-Buildwave@0.0.1",
+    "chip-scope": "github:Dlloydev/Wokwi-Chip-Scope@1.0.7"
   }
 }
